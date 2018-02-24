@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ALForm.h"
 
 @interface ViewController : UIViewController
 

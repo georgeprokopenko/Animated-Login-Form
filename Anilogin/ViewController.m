@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet ALForm* alForm;
+
 @end
 
 @implementation ViewController
