@@ -14,11 +14,7 @@
 		4DAAC5572041C9DC00A0F86F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC5552041C9DC00A0F86F /* LaunchScreen.storyboard */; };
 		4DAAC55A2041C9DC00A0F86F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAC5592041C9DC00A0F86F /* main.m */; };
 		4DAAC5622041CD2200A0F86F /* ALForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAC5612041CD2200A0F86F /* ALForm.m */; };
-		4DAAC5642041D18E00A0F86F /* owl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC5632041D18E00A0F86F /* owl@2x.png */; };
-		4DAAC5672041DB9B00A0F86F /* owl_right_eye@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC5652041DB9900A0F86F /* owl_right_eye@2x.png */; };
-		4DAAC5682041DB9B00A0F86F /* owl_left_eye@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC5662041DB9A00A0F86F /* owl_left_eye@2x.png */; };
-		4DAAC56B2041F3DE00A0F86F /* owl_wing_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC5692041F3DE00A0F86F /* owl_wing_left@2x.png */; };
-		4DAAC56C2041F3DE00A0F86F /* owl_wing_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC56A2041F3DE00A0F86F /* owl_wing_right@2x.png */; };
+		878C58F420F4C54F00C07BB2 /* ALFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878C58F320F4C54F00C07BB2 /* ALFormView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,11 +30,7 @@
 		4DAAC5592041C9DC00A0F86F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4DAAC5602041CD2200A0F86F /* ALForm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALForm.h; sourceTree = "<group>"; };
 		4DAAC5612041CD2200A0F86F /* ALForm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALForm.m; sourceTree = "<group>"; };
-		4DAAC5632041D18E00A0F86F /* owl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl@2x.png"; sourceTree = "<group>"; };
-		4DAAC5652041DB9900A0F86F /* owl_right_eye@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl_right_eye@2x.png"; sourceTree = "<group>"; };
-		4DAAC5662041DB9A00A0F86F /* owl_left_eye@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl_left_eye@2x.png"; sourceTree = "<group>"; };
-		4DAAC5692041F3DE00A0F86F /* owl_wing_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl_wing_left@2x.png"; sourceTree = "<group>"; };
-		4DAAC56A2041F3DE00A0F86F /* owl_wing_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl_wing_right@2x.png"; sourceTree = "<group>"; };
+		878C58F320F4C54F00C07BB2 /* ALFormView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALFormView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +68,9 @@
 				4DAAC54D2041C9DC00A0F86F /* ViewController.h */,
 				4DAAC54E2041C9DC00A0F86F /* ViewController.m */,
 				4DAAC5502041C9DC00A0F86F /* Main.storyboard */,
-				4DAAC5632041D18E00A0F86F /* owl@2x.png */,
-				4DAAC5662041DB9A00A0F86F /* owl_left_eye@2x.png */,
-				4DAAC5652041DB9900A0F86F /* owl_right_eye@2x.png */,
-				4DAAC5692041F3DE00A0F86F /* owl_wing_left@2x.png */,
-				4DAAC56A2041F3DE00A0F86F /* owl_wing_right@2x.png */,
 				4DAAC5602041CD2200A0F86F /* ALForm.h */,
 				4DAAC5612041CD2200A0F86F /* ALForm.m */,
+				878C58F320F4C54F00C07BB2 /* ALFormView.xib */,
 				4DAAC5532041C9DC00A0F86F /* Assets.xcassets */,
 				4DAAC5552041C9DC00A0F86F /* LaunchScreen.storyboard */,
 				4DAAC5582041C9DC00A0F86F /* Info.plist */,
@@ -117,7 +105,7 @@
 		4DAAC53F2041C9DC00A0F86F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "George Prokopenko";
 				TargetAttributes = {
 					4DAAC5462041C9DC00A0F86F = {
@@ -149,14 +137,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DAAC5682041DB9B00A0F86F /* owl_left_eye@2x.png in Resources */,
 				4DAAC5572041C9DC00A0F86F /* LaunchScreen.storyboard in Resources */,
-				4DAAC5642041D18E00A0F86F /* owl@2x.png in Resources */,
-				4DAAC56B2041F3DE00A0F86F /* owl_wing_left@2x.png in Resources */,
 				4DAAC5542041C9DC00A0F86F /* Assets.xcassets in Resources */,
-				4DAAC56C2041F3DE00A0F86F /* owl_wing_right@2x.png in Resources */,
 				4DAAC5522041C9DC00A0F86F /* Main.storyboard in Resources */,
-				4DAAC5672041DB9B00A0F86F /* owl_right_eye@2x.png in Resources */,
+				878C58F420F4C54F00C07BB2 /* ALFormView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +194,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -217,6 +202,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -265,6 +251,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -272,6 +259,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

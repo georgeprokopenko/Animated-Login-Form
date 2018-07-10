@@ -19,45 +19,77 @@ typedef enum EyesPositioningMode : NSInteger {
     EyesPositioningModeTrack
 } EyesPositioningMode;
 
+@interface ALForm ()
+
+@property (weak, nonatomic) IBOutlet UIImageView* owl;
+@property (weak, nonatomic) IBOutlet UIImageView* owlLeftEye;
+@property (weak, nonatomic) IBOutlet UIImageView* owlRightEye;
+@property (weak, nonatomic) IBOutlet UIImageView* owlLeftWing;
+@property (weak, nonatomic) IBOutlet UIImageView* owlRightWing;
+
+@end
+
 @implementation ALForm {
     EyesPositioningMode eyesPositioningMode;
     EyesState eyesState;
 }
 
+
+- (void) setupWithType:(ALFormType)type {
+    
+}
+
 - (void) drawRect:(CGRect)rect {
-    
-    [self setElementsAppearence];
-    
-    [self.loginField addTarget:self action:@selector(textFieldChangedText:) forControlEvents:UIControlEventEditingChanged];
+    [self initForm];
+    [self setElements];
     
     eyesState = EyesStateOpened;
     eyesPositioningMode = EyesPositioningModeStraight;
     [self animateEyesWithHorizontalPosition:0];
 }
 
-- (void) setElementsAppearence {
-    // RADIUS
-    self.formView.layer.cornerRadius = 28.0;
-    self.loginField.layer.cornerRadius = 20.0;
-    self.passwordField.layer.cornerRadius = 20.0;
-    self.submitButton.layer.cornerRadius = 20.0;
+- (void) initForm {
+    UIView* initiatedView = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"ALFormView" owner:self options:nil] firstObject];
     
-    // BORDER
+    if (initiatedView) {
+        [self addSubview:initiatedView];
+        
+        initiatedView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [initiatedView.leftAnchor constraintEqualToAnchor:self.leftAnchor].active = YES;
+        [initiatedView.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
+        [initiatedView.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
+        [initiatedView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
+    }
+}
+
+- (void) setElements {
+    
+    self.formView.layer.cornerRadius = 15.0;
+    self.loginField.layer.cornerRadius = 10.0;
+    self.passwordField.layer.cornerRadius = 10.0;
+    self.submitButton.layer.cornerRadius = 10.0;
+    
+    self.loginField.delegate = self;
+    self.passwordField.delegate = self;
+    
     self.loginField.layer.borderWidth = 1.0;
     self.passwordField.layer.borderWidth = 1.0;
     self.loginField.layer.borderColor = self.passwordField.backgroundColor.CGColor;
     self.passwordField.layer.borderColor = self.passwordField.backgroundColor.CGColor;
     
-    // BACKGROUND
     self.loginField.backgroundColor = [UIColor clearColor];
     self.passwordField.backgroundColor = [UIColor clearColor];
     
+    self.loginField.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0);
+    self.passwordField.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0);
+    
+    [self.loginField addTarget:self action:@selector(textFieldChangedText:) forControlEvents:UIControlEventEditingChanged];
+    [self.submitButton addTarget:self action:@selector(submitButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void) animateEyesWithHorizontalPosition:(int)horizontalPos {
-    
-    int horizontalPosition;
-    int verticalPosition;
+- (void) animateEyesWithHorizontalPosition:(float)horizontalPos {
+    float horizontalPosition, verticalPosition;
     
     switch (eyesPositioningMode) {
         case EyesPositioningModeStraight:
@@ -77,8 +109,8 @@ typedef enum EyesPositioningMode : NSInteger {
     }
     
     [UIView animateWithDuration:1.2 animations:^{
-        self.owlLeftEye.transform = CGAffineTransformTranslate(self.owlLeftEye.transform, horizontalPosition-self.owlLeftEye.transform.tx, verticalPosition-self.owlLeftEye.transform.ty);
-        self.owlRightEye.transform = CGAffineTransformTranslate(self.owlRightEye.transform, horizontalPosition-self.owlRightEye.transform.tx, verticalPosition-self.owlRightEye.transform.ty);
+        self.owlLeftEye.transform = CGAffineTransformTranslate(self.owlLeftEye.transform, horizontalPosition-self.owlLeftEye.transform.tx, verticalPosition - self.owlLeftEye.transform.ty);
+        self.owlRightEye.transform = CGAffineTransformTranslate(self.owlRightEye.transform, horizontalPosition-self.owlRightEye.transform.tx, verticalPosition - self.owlRightEye.transform.ty);
     }];
     
 }
@@ -87,8 +119,6 @@ typedef enum EyesPositioningMode : NSInteger {
     if (eyesState == EyesStateOpened) return;
     [UIView animateWithDuration:0.8 animations:^{
         
-        //self.owlLeftWing.transform = CGAffineTransformRotate(self.owlLeftWing.transform, -0.1);
-        //self.owlRightWing.transform = CGAffineTransformRotate(self.owlRightWing.transform, 0.1);
         self.owlLeftWing.transform = CGAffineTransformTranslate(self.owlLeftWing.transform, 0, 55);
         self.owlRightWing.transform = CGAffineTransformTranslate(self.owlRightWing.transform, 0, 55);
     }];
@@ -98,8 +128,6 @@ typedef enum EyesPositioningMode : NSInteger {
 - (void) closeEyes {
     if (eyesState == EyesStateClosed) return;
     [UIView animateWithDuration:0.8 animations:^{
-        //self.owlLeftWing.transform = CGAffineTransformRotate(self.owlLeftWing.transform, 0.1);
-        //self.owlRightWing.transform = CGAffineTransformRotate(self.owlRightWing.transform, -0.1);
         self.owlLeftWing.transform = CGAffineTransformTranslate(self.owlLeftWing.transform, 0, -55);
         self.owlRightWing.transform = CGAffineTransformTranslate(self.owlRightWing.transform, 0, -55);
     }];
@@ -116,15 +144,12 @@ typedef enum EyesPositioningMode : NSInteger {
     } else {
         [self closeEyes];
     }
+    
+    if (self.delegate) [self.delegate alFormDidBeginEditing];
 }
 
 - (void) textFieldDidEndEditing:(UITextField *)textField {
-//    if (textField == self.loginField) {
-//        eyesPositioningMode = EyesPositioningModeStraight;
-//        [self animateEyesWithHorizontalPosition:0];
-//    } else {
-//        [self openEyes];
-//    }
+    if (self.delegate) [self.delegate alFormDidEndEditing];
 }
 
 - (void) textFieldChangedText:(UITextField*)textField {
@@ -133,10 +158,19 @@ typedef enum EyesPositioningMode : NSInteger {
         [self animateEyesWithHorizontalPosition:0];
         return;
     }
-    if (eyesState == EyesStateClosed){ [self openEyes];}
+    
+    if (eyesState == EyesStateClosed) [self openEyes];
+    
     eyesPositioningMode = EyesPositioningModeTrack;
-    int desiredPosition = (int)(textField.text.length/3.5) - 5;
-    [self animateEyesWithHorizontalPosition:desiredPosition];
+    float desiredPosition = (int)(textField.text.length/3.5) - 5;
+    if (desiredPosition < 3) [self animateEyesWithHorizontalPosition:desiredPosition];
+}
+
+#pragma mark Submit button
+
+- (void) submitButtonTapped {
+    [self endEditing:YES];
+    if (self.delegate) [self.delegate alFormSubmitButtonTapped];
 }
 
 @end
