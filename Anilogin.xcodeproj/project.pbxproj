@@ -15,6 +15,7 @@
 		4DAAC55A2041C9DC00A0F86F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAC5592041C9DC00A0F86F /* main.m */; };
 		4DAAC5622041CD2200A0F86F /* ALForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAC5612041CD2200A0F86F /* ALForm.m */; };
 		878C58F420F4C54F00C07BB2 /* ALFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878C58F320F4C54F00C07BB2 /* ALFormView.xib */; };
+		878C58F920F4EB1500C07BB2 /* ALFormAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 878C58F820F4EB1500C07BB2 /* ALFormAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		4DAAC5602041CD2200A0F86F /* ALForm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALForm.h; sourceTree = "<group>"; };
 		4DAAC5612041CD2200A0F86F /* ALForm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALForm.m; sourceTree = "<group>"; };
 		878C58F320F4C54F00C07BB2 /* ALFormView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALFormView.xib; sourceTree = "<group>"; };
+		878C58F820F4EB1500C07BB2 /* ALFormAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ALFormAssets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,15 +70,24 @@
 				4DAAC54D2041C9DC00A0F86F /* ViewController.h */,
 				4DAAC54E2041C9DC00A0F86F /* ViewController.m */,
 				4DAAC5502041C9DC00A0F86F /* Main.storyboard */,
-				4DAAC5602041CD2200A0F86F /* ALForm.h */,
-				4DAAC5612041CD2200A0F86F /* ALForm.m */,
-				878C58F320F4C54F00C07BB2 /* ALFormView.xib */,
+				878C58FA20F4EB1A00C07BB2 /* ALForm */,
 				4DAAC5532041C9DC00A0F86F /* Assets.xcassets */,
 				4DAAC5552041C9DC00A0F86F /* LaunchScreen.storyboard */,
 				4DAAC5582041C9DC00A0F86F /* Info.plist */,
 				4DAAC5592041C9DC00A0F86F /* main.m */,
 			);
 			path = Anilogin;
+			sourceTree = "<group>";
+		};
+		878C58FA20F4EB1A00C07BB2 /* ALForm */ = {
+			isa = PBXGroup;
+			children = (
+				4DAAC5602041CD2200A0F86F /* ALForm.h */,
+				4DAAC5612041CD2200A0F86F /* ALForm.m */,
+				878C58F320F4C54F00C07BB2 /* ALFormView.xib */,
+				878C58F820F4EB1500C07BB2 /* ALFormAssets.xcassets */,
+			);
+			path = ALForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				878C58F920F4EB1500C07BB2 /* ALFormAssets.xcassets in Resources */,
 				4DAAC5572041C9DC00A0F86F /* LaunchScreen.storyboard in Resources */,
 				4DAAC5542041C9DC00A0F86F /* Assets.xcassets in Resources */,
 				4DAAC5522041C9DC00A0F86F /* Main.storyboard in Resources */,
