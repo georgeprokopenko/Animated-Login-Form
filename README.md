@@ -1,5 +1,5 @@
 # Animated-Login-Form
-Animated Login form written ob Objective- C. Currently only owl character included. More characters will be later.
+Animated Login form written on Objective- C. Currently only owl character is included. More characters will be available later.
 
 # Description
 This app shows how to use my animated form view.
