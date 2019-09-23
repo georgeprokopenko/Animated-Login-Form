@@ -17,16 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    /* You can change colors of ALForm here.
-     Use properties below:
-    
-     self.alForm.formView;
-     self.alForm.loginField;
-     self.alForm.passwordField;
-     self.alForm.submitButton;
-     */
-    
-    self.alForm.delegate = self;
 }
 
 #pragma mark ALForm Delegate
@@ -40,12 +30,12 @@
 }
 
 - (void) alFormSubmitButtonTapped {
+    if (self.alForm.loginField.text.length == 0) [self.alForm showError:YES text:@"Invalid login/password"];
     [UIView animateWithDuration:0.4 animations:^{
         self.alForm.transform = CGAffineTransformMakeTranslation(self.alForm.transform.tx, 0);
     }];
     
     NSLog(@"ALFormSubmitButtonTapped");
-    NSLog(@"ALForm login: %@, password: %@", self.alForm.loginField.text, self.alForm.passwordField.text);
 }
 
 - (void) alFormDidEndEditing {

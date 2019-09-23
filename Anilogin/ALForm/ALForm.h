@@ -24,12 +24,13 @@ IB_DESIGNABLE
 @end
 
 @interface ALForm : UIView <UITextFieldDelegate>
-
-@property (assign, nonatomic) id <ALFormDelegate> delegate;
+@property (assign, nonatomic) IBOutlet id <ALFormDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIView* formView;
 @property (weak, nonatomic) IBOutlet UITextField* loginField;
 @property (weak, nonatomic) IBOutlet UITextField* passwordField;
 @property (weak, nonatomic) IBOutlet UIButton* submitButton;
+
+- (void) showError:(bool)show text:(NSString*)text;
 
 @end
